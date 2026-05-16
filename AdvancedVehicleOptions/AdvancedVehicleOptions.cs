@@ -20,9 +20,10 @@ namespace AdvancedVehicleOptionsUID
 
     {
         public static string ModName => "Advanced Vehicle Options";
-        //public static string Version => "1.9.13beta6 05032026 0025 Patch 1.21.1-f9";
+        //public static string Version => "1.9.13.1 beta5 "+ DateTime.Now +" Patch 1.21.1-f9";
+        //public static string Version => "1.9.13.1 beta5 16-02-2026 21:10 Patch 1.21.1-f9";
 
-        public static string Version => "1.9.13";
+        public static string Version => "1.9.13.1";
         public string Name => ModName + " " + Version;
 
         public AVOMod()
@@ -315,6 +316,8 @@ namespace AdvancedVehicleOptionsUID
                     return;
                 }
 
+                //Singleton<GuideManager>.instance.TutorialDisabled = true;
+
                 AdvancedVehicleOptions.isGameLoaded = true;
 
                 if (instance != null)
@@ -362,6 +365,7 @@ namespace AdvancedVehicleOptionsUID
                         }
                     }
                 }
+
                 catch { }
 
                 // new EnumerableActionThread(BrokenAssetsFix);
@@ -491,6 +495,7 @@ namespace AdvancedVehicleOptionsUID
                 GameObject.Destroy(m_mainPanel.gameObject);
                 m_mainPanel = null;
             }
+
         }
 
         public static void UpdateOptionPanelInfo()

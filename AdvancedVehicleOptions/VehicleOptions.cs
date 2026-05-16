@@ -1576,6 +1576,38 @@ namespace AdvancedVehicleOptionsUID
             options.isLargeVehicle = stored.m_isLargeVehicle;
             prefab.m_placementStyle = stored.m_placementStyle;
             prefab.m_class.name = stored.m_classname;
+
+
+            // Raceday DLC has some default values that differ from the base game, so we need to store them as well to avoid conflicts with mods changing those values
+            if (AdvancedVehicleOptions.hasRaceDayDLC && prefab.m_class.name == "Race Car Vehicle")
+            {
+                if (options.maxSpeed == 20f)
+                    options.maxSpeed = 12f;
+
+                if (options.acceleration == 1f)
+                    options.acceleration = 6f;
+
+                if (options.braking == 2f)
+                    options.braking = 16f;
+
+                if (options.turning == 0.2f)
+                    options.turning = 16f;
+            }
+
+             if (AdvancedVehicleOptions.hasRaceDayDLC && prefab.m_class.name == "Race Citizen" && (prefab.name == "Race Bicycle 01" || prefab.name == "Race Bicycle 02"))
+                {
+                if (options.maxSpeed == 5f)
+                    options.maxSpeed = 8f;
+
+                if (options.acceleration == 1f)
+                    options.acceleration = 2.5f;
+
+                if (options.braking == 2f)
+                    options.braking = 16f;
+
+                if (options.turning == 0.2f)
+                    options.turning = 16f;
+            }
         }
 
         public static void RestoreAll()
@@ -1624,6 +1656,39 @@ namespace AdvancedVehicleOptionsUID
                 m_lastTrailer = prefab.m_trailers[prefab.m_trailers.Length - 1].m_info;
                 m_probability = prefab.m_trailers[prefab.m_trailers.Length - 1].m_invertProbability;
             }
+
+
+            // Raceday DLC has some default values that differ from the base game, so we need to store them as well to avoid conflicts with mods changing those values
+            if (AdvancedVehicleOptions.hasRaceDayDLC && m_classname == "Race Car Vehicle")
+            {
+                if (m_maxSpeed == 20f)
+                    m_maxSpeed = options.maxSpeed = 12f;
+
+                if (m_acceleration == 1f)
+                    m_acceleration = options.acceleration = 6f;
+
+                if (m_braking == 2f)
+                    m_braking = options.braking = 16f;
+
+                if (m_turning == 0.2f)
+                    m_turning = options.turning = 16f;
+            }
+
+            if (AdvancedVehicleOptions.hasRaceDayDLC && m_classname == "Race Citizen" && (prefab.name == "Race Bicycle 01" || prefab.name == "Race Bicycle 02"))
+            {
+                if (m_maxSpeed == 5f)
+                    m_maxSpeed = options.maxSpeed = 8f;
+
+                if (m_acceleration == 1f)
+                    m_acceleration = options.acceleration = 2.5f;
+
+                if (m_braking == 2f)
+                    m_braking = options.braking = 16f;
+
+                if (m_turning == 0.2f)
+                    m_turning = options.turning = 16f;
+            }
+
         }
 
         private bool m_enabled;
