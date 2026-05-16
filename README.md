@@ -1,3 +1,21 @@
+# CS-AdvancedVehicleOptions 1.9.13.1
+* Fixed/adding ability to take over the Race Cars and Bicycles properties properly - thanks again to t1a2l.
+* Change of asset properties - Race Cars and Race Bicycles have bogus properties, AVO intially corrects them now. Values can be any time overriden. If 125 km/h is entered for Race Cars, the value will be corrected again. No such effect on the Bicycles.
+* Fixed the Russion Language File not showing due to wrong "en" entry in the language file
+* Small wording change in Chinese Language file contributed by Eve.
+
+Please note:
+Racedays DLC: the race vehicles do good around 100 km/h, but above they will act weird. The standard value is 125 km/h. Due to this, AVO will set them automatically to the data, which are usually used in the race. This is a speed of 75 km/h. You can override this value, but the high you go, the more crazy the vehicles will drive. If you use 125 km/h, AVO will set the speed back to 75 km/h. The Race Bicycles are now doing 50 km/h instead like the City Bikes around 31 km/h. You can change to any speed, the faster the worse they act. Any change will be only applied, if a new event is started. You cannot change speed during an ongoing race event. This is due to game design.
+ 
+# CS-AdvancedVehicleOptions 1.9.13
+Tested & Updated for Raceday DLC - special thanks to t1a2l for enabling the Raceday functionality
+* Fix added for missing DLCs: If you do not own a specific DLC, the category will now longer show in AVO, so no more empty lists and lockups.
+* Added categories to support the Raceday DLC. For convenience reasons, the Race Bicycles have a separate category next to the Racecars and Parade vehicles.
+* Added Harmony support as some code lines were requiring functionality of the Harmony lib. AVO flags this now as requirement. (however, I assume most users have already some mod which uses Harmony, so potentially no impact)
+* Added the native support for the freight barge, freight helicopter and prison helicopter mod by T1a2l.
+* Integrated the XML Bulk Editor created by Testicle some weeks ago. Cick to the mod option panel and check the corresponding section to start the XML editor from the mod. The required HTML file is included in the mod distribution via workshop.
+* Updated all language translation files as best as I could using ChatGPT. All supplied language files are now completely translated. If you see something which reads weird or is wrong, please update in Crowdln or report with correct wording in the language comment section.
+
 # CS-AdvancedVehicleOptions 1.9.12
 Tested & Updated for Hotel&Resorts DLC
 * Fixed - Fix for freezing the game at startup (no longer modal windows, when having a window prompt - especially upon start, when the mod informed user, that a specific service does not have a vehicle assigned)
